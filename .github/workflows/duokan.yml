@@ -3,7 +3,7 @@ name: 多看阅读
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0,3,12,20 * * *'
+    - cron: '* 6 * * *'
   watch:
     types: [started]
 env:
