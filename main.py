@@ -383,7 +383,6 @@ if __name__ == "__main__":
         dksign = DuoKan(cookie)
         dksign.get_info()
         tz += dksign.check_in() + "\n"
-        tz += dksign.get_free_book() + "\n"
         tz += dksign.getchances() + "\n"
         tz += dksign.daily() + "\n"
         tz += dksign.download() + "\n"
