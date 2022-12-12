@@ -257,22 +257,6 @@ class DuoKan:
         r = self.template("/checkin/v0/checkin")
         return f"【每日签到】{r['msg']}"
 
-    def get_free_book(self):
-        """
-        获取限免书籍
-        """
-        r = self.template("/hs/v4/channel/query/2027")
-        bookid = r["items"][0]["data"]["book_id"]
-        param = {
-            "payment_name": "BC",
-            "ch": "VSZUVB",
-            "book_id": bookid,
-            "price": 0,
-            "allow_discount": 1,
-        }
-        r = self.template("/store/v0/payment/book/create", param)
-        return f"【今日限免】{r['book']['title']}(作者：{r['book']['authors']}) [{r['msg']}]"
-
     def delay_beans(self, expire):
         """
         书豆延期
